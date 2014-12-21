@@ -1,16 +1,16 @@
 {
   "vagrant": {
     "ip": "33.33.33.10",
-    "memory": "1024",
-    "cpus": 2,
+    "memory": "512",
+    "cpus": 1,
     "dns": [
-      "db1.dev"
+      "app1.dev"
     ]
   },
   "run_list": [
+    "recipe[apt]",
     "recipe[java]",
-    "recipe[memcached]",
-    "recipe[influxdb::default]"
+    "recipe[memcached]"
   ],
   "java": {
     "install_flavor": "oracle",
@@ -18,11 +18,5 @@
     "oracle": {
       "accept_oracle_download_terms": true
     }
-  },
-  "influxdb": {
-    "action": [
-      "create",
-      "start"
-    ]
   }
 }
