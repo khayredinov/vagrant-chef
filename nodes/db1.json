@@ -1,0 +1,22 @@
+{
+  "vagrant": {
+    "ip": "33.33.33.1",
+    "memory": "1024",
+    "cpus": 2,
+    "dns": [
+      "db1.dev"
+    ]
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[java]",
+    "recipe[memcached]"
+  ],
+  "java": {
+    "install_flavor": "oracle",
+    "jdk_version": "8",
+    "oracle": {
+      "accept_oracle_download_terms": true
+    }
+  }
+}
